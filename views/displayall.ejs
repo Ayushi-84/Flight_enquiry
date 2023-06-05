@@ -1,0 +1,104 @@
+<style>
+
+    .maincontainer{
+        display: flex;
+        justify-content: center;
+        background: #82ccdd;
+        height: 100vh;
+    }
+ .root{
+     width: 1000px;
+     height: 500px;
+     margin-top: 20px;
+     background: #dff9fb;
+     padding: 10px; 
+ }
+.heading{
+    color: #1e3799;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: Oxygen;
+    display: flex;
+    justify-content: center;
+    
+}
+.msgcolor{
+    color: rgba(219, 3, 3, 0.822);
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Oxygen;
+    display: flex;
+    justify-content: center;
+    
+}
+</style>
+
+<html>
+
+<head>
+         <!--Import Google Icon Font-->
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+         
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+
+         
+
+          
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="maincontainer">
+        <div class="root">
+            <div class="heading">
+                <span><img src="/images/Air_India.png" width="60"></span> Flight Enquiry System
+             </div>
+
+      <table class="striped">
+        <thead>
+          <tr>
+              <th>Flight Id</th>
+              <th>Company Name</th>
+              <th>Source</th>
+              <th>Destination</th>
+              <th>Type</th>
+              <th>Class</th>
+              <th>Days</th>
+              <th>Update</th>
+          </tr>
+        </thead>
+
+        <tbody>
+         
+<% data.map((item)=>{ %>
+
+    <tr>
+<td><%=item.flightid%></td>
+<th><a href="/flight/showpicture?flightid=<%=item.flightid%>&companyname=<%=item.companyname%>&logo=<%=item.logo%>"><img src="/images/<%=item.logo%>" width="40"></a> <%=item.companyname%></th>
+<td><%=item.sc%><br><%=item.sourcetiming%></td>
+<td><%=item.dc%><br><%=item.destinationtiming%></td>
+<td><%=item.status%></td>
+<td><%=item.flightclass%></td>
+<td><%=item.days%></td>
+<td><a href="/flight/displaybyid?flightid=<%=item.flightid%>">Update</a></td>
+
+    </tr>
+
+    <% }) %>
+
+        </tbody>
+      </table>
+
+        </div>
+    </div>
+
+    </body>
+
+</html>

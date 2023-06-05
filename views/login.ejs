@@ -1,0 +1,134 @@
+<style>                                           
+  
+    .root{
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    padding:10px
+    
+    }
+  
+    .maincontainer{
+        
+              display: flex;
+             justify-content: center;
+             width: 100%;
+             align-items: center;
+        
+            height: 100vh;
+            background: url('/images/Res1.jpg');
+         
+                       
+        }
+        
+        .msgcolor{
+        color: red;
+      font-size: 24px;
+        font-weight: bold;
+        font-family: oxygen;
+        padding-top: 10px;
+        display:flex;
+        justify-content: center;
+    }   
+        
+                 
+  
+    .heading{
+        color: whitesmoke;
+      font-size: 28px;
+        font-weight: bold;
+        font-family: oxygen;
+        
+        display:flex;
+        justify-content: center;
+        padding-top: -5px;
+    }        
+</style>
+
+<html>
+
+
+  
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Admin's Login Page</title>
+  
+
+            <!--Import Google Icon Font-->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+
+      
+            
+            <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    </head>
+        <body>
+            
+            <form action="/admin/chkadminlogin" method="post">
+
+    
+        <div class="maincontainer">
+            <div class="root">
+
+              <div class="row">
+                <div class="col s12" >
+                  <div class="row">
+                    <div class="col s12" style="display: flex; justify-content: center;">
+                      <i class="large material-icons" style="color: azure;">account_circle</i>
+                    </div>
+                  </div>
+    
+                  <div class="row">
+                    <div class="col s12 heading" style="display: flex; justify-content: center;">
+                      Login Page
+                    </div>
+                  </div>
+                
+                
+    <div class="row">
+      <div class="col s12">
+        <div class="input-field">
+          <i class="material-icons prefix" style="color: azure;">mail</i>
+          <input id="eid" name="userid" type="text" class="validate">
+          <label for="eid">Email</label>
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          
+          <i class="material-icons prefix" style="color: azure;">fingerprint</i>
+          <input id="password" name="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div style="display: flex;justify-content: center; color: black;">
+        <button class="btn waves-effect waves-light white" type="submit" name="action" style="color: black">Login
+            <i class="material-icons right" style="color: black;">send</i>
+          </button>
+      </div>
+    <div class="msgcolor">
+        <%=msg%>
+    </div>
+    
+                </div>
+            </div>
+              
+</div>
+
+
+        </div>
+    </form>
+        </body>
+
+        
+</html>
